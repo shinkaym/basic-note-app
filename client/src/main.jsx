@@ -9,8 +9,12 @@ import routes from './routes';
 import { Container } from '@mui/material';
 import './firebase/config'
 
-createRoot(document.getElementById('root')).render(
-    <Container maxWidth='lg' sx={{ textAlign: 'center', marginTop: '50px' }}>
-      <RouterProvider router={routes} />
-    </Container>
-);
+try {
+  createRoot(document.getElementById('root')).render(
+      <Container maxWidth='lg' sx={{ textAlign: 'center', marginTop: '50px' }}>
+        <RouterProvider router={routes} />
+      </Container>
+  );
+} catch (error) {
+  console.error('Error rendering React application:', error);
+}
